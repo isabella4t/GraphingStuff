@@ -1,6 +1,6 @@
 ### Graphing
-##### Author : Isabella Tang
-##### Acknowledgements : Mr. Kuszmaul
+#### Author : Isabella Tang
+#### Acknowledgements : Mr. Kuszmaul
 ### Methods:
 ##### Edge() takes start and end nodes
 ##### Node() takes int
