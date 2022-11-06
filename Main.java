@@ -27,6 +27,9 @@ public class Main {
 
         Graph tony = new Graph(thenodes,theedges);
 
+        System.out.println("The matrix");
+        System.out.print(tony.adjacencyMatrix());
+
         System.out.println(tony);
 
         pass++;
@@ -43,11 +46,15 @@ public class Main {
 
         for(Node n: names){
             for(Node o: names){
-                network.add(new Edge(n,o));
+                if(randomedge()){
+                    network.add(new Edge(n,o));
+                }
             }
         }
 
         Graph bob = new Graph(names,network);
+        System.out.println("The matrix");
+        System.out.print(bob.adjacencyMatrix());
 
         System.out.println(bob);
 
@@ -69,7 +76,9 @@ public class Main {
 
         for(Node n: cities){
             for(Node o: cities){
-                roads.add(new Edge(n,o));
+                if(randomedge()){
+                    roads.add(new Edge(n,o));
+                }
             }
         }
 
@@ -80,5 +89,8 @@ public class Main {
         pass++;
     }
 
-
+    //determines randomly if an edge gets made
+    public static boolean randomedge(){
+        return Math.random() > 0.5;
+    }
 }
