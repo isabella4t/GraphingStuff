@@ -7,6 +7,7 @@ public class Main {
        testnum();
        testnames();
        testcities();
+       teststudents();
        System.out.println("pass: " + pass + " fail: " + fail);
     }
 
@@ -33,7 +34,7 @@ public class Main {
         System.out.println(tony);
 
         pass++;
-    }
+    }//tests making one edge on int nodes
     public static void testnames(){
         HashSet<Node> names = new HashSet<Node>();
         HashSet<Edge> network = new HashSet<Edge>();
@@ -59,7 +60,7 @@ public class Main {
         System.out.println(bob);
 
         pass++;
-    }
+    }//tests randomly made edges of String nodes
     public static void testcities(){
         HashSet<Node> cities = new HashSet<Node>();
         HashSet<Edge> roads = new HashSet<Edge>();
@@ -87,7 +88,32 @@ public class Main {
         System.out.println(eli);
 
         pass++;
-    }
+    }//tests randomly made edges of City nodes
+    public static void teststudents(){
+        HashSet<Node> names = new HashSet<Node>();
+        HashSet<Edge> network = new HashSet<Edge>();
+
+        names.add(new Vnodes("Sage"));
+        names.add(new Vnodes("Molly"));
+        names.add(new Vnodes("Skye"));
+        names.add(new Vnodes("Chamber"));
+        names.add(new Vnodes("Reyna"));
+
+        for(Node n: names){
+            for(Node o: names){
+                network.add(new Edge(n,o));
+
+            }
+        }
+
+        Graph joe = new Graph(names,network);
+        System.out.println("The matrix");
+        System.out.print(joe.adjacencyMatrix());
+
+        System.out.println(joe);
+
+        pass++;
+    }//tests completely connected string nodes
 
     //determines randomly if an edge gets made
     public static boolean randomedge(){
