@@ -8,3 +8,4 @@
 ##### Graph() takes a set of nodes and a set of edges
 ##### City() takes city name and population
 ##### toString() returns string
+##### adjacencyMatrix() returns matrix with 1s representing edges between two points (the indexes)
